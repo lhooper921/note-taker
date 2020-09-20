@@ -77,13 +77,13 @@ app.post("/api/notes", function(req, res) {
 // uuid
 // Get single note
 app.put('/api/notes/:id', (req, res) => {
-  const found = notes.some(note => note.id == (req.params.id));
+  const found = notes.some(note => note.id == parseInt(req.params.id));
 
   // If specified id exists then return the member info associated with that id
   if (found) {
   const updNote = req.body;
   notes.forEach(note => {
-      if(note.id === (req.params.id)){
+      if(note.id === parseInt(req.params.id)){
           note.title = updNote.title ? updNote.title : note.title;
           note.text = updNote.text ? updNote.text: note.text;
 
