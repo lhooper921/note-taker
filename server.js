@@ -10,7 +10,7 @@ const uuid = require('uuid');
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 
 
